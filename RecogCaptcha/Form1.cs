@@ -34,21 +34,27 @@ namespace RecogCaptcha
         {
             Bitmap imagem = new Bitmap(img);
             imagem = imagem.Clone(new Rectangle(0, 0, img.Width, img.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            Grayscale cinza = new Grayscale(0.2125, 0.7154, 0.0721);
+            Bitmap grayImage = cinza.Apply(imagem);
+            SISThreshold filter = new SISThreshold();
+            filter.ApplyInPlace(grayImage);
+            Invert inverter = new Invert();
+            /*
             Erosion erosion = new Erosion();
             Dilatation dilatation = new Dilatation();
-            Invert inverter = new Invert();
             ColorFiltering cor = new ColorFiltering();
             cor.Blue = new AForge.IntRange(200, 255);
             cor.Red = new AForge.IntRange(200, 255);
             cor.Green = new AForge.IntRange(200, 255);
             Opening open = new Opening();
             BlobsFiltering bc = new BlobsFiltering();
+            bc.MinHeight = 10;
             Closing close = new Closing();
             GaussianSharpen gs = new GaussianSharpen();
+            */
             ContrastCorrection cc = new ContrastCorrection();
-            bc.MinHeight = 10;
-            FiltersSequence seq = new FiltersSequence(gs, inverter, open, inverter, bc, inverter, open, cc, cor, bc, inverter);
-            pictureBox.Image = seq.Apply(imagem);
+            FiltersSequence seq = new FiltersSequence(cc, inverter);
+            pictureBox.Image = seq.Apply(grayImage);
             string reconhecido = OCR((Bitmap)pictureBox.Image);
             return reconhecido;
         }
@@ -58,10 +64,10 @@ namespace RecogCaptcha
             string res = "";
             using (var engine = new TesseractEngine(@"tessdata", "eng", EngineMode.Default))
             {
-                engine.SetVariable("tessedit_char_whitelist", "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+                engine.SetVariable("tessedit_char_whitelist", "BCDEFGHIJKLMNPRSTUVWXYZ123456789");
                 engine.SetVariable("tessedit_unrej_any_wd", true);
                 
-                using (var page = engine.Process(b, PageSegMode.SingleLine))
+                using (var page = engine.Process(b, PageSegMode.SingleWord))
                     res = page.GetText();
             }
             return res;
