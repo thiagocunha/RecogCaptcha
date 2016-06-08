@@ -76,3 +76,10 @@ D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\obj\Debug\RecogCaptcha.csprojRe
 D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\obj\Debug\RecogCaptcha.Form1.resources
 D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\obj\Debug\RecogCaptcha.Properties.Resources.resources
 D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\obj\Debug\RecogCaptcha.csproj.GenerateResource.Cache
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\bin\Debug\AForge.dll
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\bin\Debug\AForge.Imaging.dll
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\bin\Debug\AForge.xml
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\bin\Debug\AForge.Imaging.xml
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\bin\Debug\AForge.Math.xml
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\obj\Debug\RecogCaptcha.Format1.resources
+D:\bkpusr\Source\Repos\RecogCaptcha\RecogCaptcha\obj\Debug\RecogCaptcha.LocalTest.resources
