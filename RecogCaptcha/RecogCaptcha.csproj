@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurriculumIDExtractor.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +69,12 @@
     </Compile>
     <Compile Include="Format1.Designer.cs">
       <DependentUpon>Format1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetIDs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetIDs.Designer.cs">
+      <DependentUpon>GetIDs.cs</DependentUpon>
     </Compile>
     <Compile Include="LocalTest.cs">
       <SubType>Form</SubType>
@@ -82,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Format1.resx">
       <DependentUpon>Format1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetIDs.resx">
+      <DependentUpon>GetIDs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalTest.resx">
       <DependentUpon>LocalTest.cs</DependentUpon>

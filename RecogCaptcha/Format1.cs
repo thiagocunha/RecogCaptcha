@@ -22,7 +22,7 @@ namespace RecogCaptcha
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             DirectoryInfo di = new DirectoryInfo(txtCaminho.Text);
-            DirectoryInfo di2 = di.GetDirectories("format1")[0];
+            DirectoryInfo di2 = di.GetDirectories("format2")[0];
 
             var arqs = di.GetFiles("*.png");
             int i = 0;
@@ -63,8 +63,8 @@ namespace RecogCaptcha
             GaussianSharpen gs = new GaussianSharpen();
             */
             ContrastCorrection cc = new ContrastCorrection();
-            ResizeBicubic filterResize = new ResizeBicubic(615, 195);
-            FiltersSequence seq = new FiltersSequence(filterResize, cc, inverter);
+            //ResizeBicubic filterResize = new ResizeBicubic(615, 195);
+            FiltersSequence seq = new FiltersSequence(cc, inverter);
             seq.Apply(grayImage).Save(output);
         }
     }

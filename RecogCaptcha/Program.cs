@@ -16,7 +16,7 @@ namespace RecogCaptcha
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LocalTest());
+            Application.Run(new GetIDs());
         }
     }
 }
